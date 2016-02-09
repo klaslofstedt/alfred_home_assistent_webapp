@@ -1,0 +1,7 @@
+run the http-server FIRST with "node server.js"
+
+then (if you wanna see the changes appear instant while developing) run "gulp serve"
+
+if you wanna make sure to install all software (with "npm install" (nodejs not included)) 
+when migrating to a new host, run "npm install rpi-gpio --save". To make sure it worked, open
+"package.json" and find rpi-gpio, or whatever package 
