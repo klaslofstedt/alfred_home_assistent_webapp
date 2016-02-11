@@ -2,11 +2,6 @@
     angular.module('app', ['onsen'])
         .controller('TodoController', function($scope, $timeout) {
             var socket = io();
-            // Sätt denna i en klickfunktion
-            //socket.emit('led',1);
-            //$scope.on_off = "on";
-            //$scope.switch1 = function(){
-            //}
             $scope.alertEdit = function(){
                 ons.createAlertDialog('alert-dialog.html').then(function(alertDialog) {
                     $scope.title = "Edit";
@@ -15,32 +10,24 @@
                     $scope.button3 = "ok";
                     alertDialog.show();
                 });
-                /*ons.notification.alert({
-                //message: 'Message',
-                messageHTML: '<div>Message in HTML</div>',
-                title: 'Edit',
-                buttonLabel: 'Cancel',
-                animation: 'default', // or 'none'
-                modifier: 'material',
-                callback: function() {
-                // Alert button is closed!
-                }
-                });*/
             }
-            // Initial value of the brightness bar
-            $scope.brightness1 = 50;
             // Initial value of ON/OFF button
-            $scope.showingEven = 'Off';
+            $scope.led1Status = 'Off';
             // on press function for ON/OFF button
-            $scope.isSelected = function(){
-                //$scope.showingEven = ! $scope.showingEven;
-                $scope.showingEven = $scope.showingEven === 'On' ? 'Off' : 'On';
-                if($scope.showingEven == 'On'){
-                    socket.emit('led',1);
+            $scope.led1IsStatus = function(){
+                //console.log('hej');
+                $scope.led1Status = $scope.led1Status === 'On' ? 'Off' : 'On';
+                if($scope.led1Status == 'On'){
+                    socket.emit('led1_status',1);
                 }
                 else{
                     socket.emit('led',0);
                 }
             }
+            // Initial value of the brightness bar
+            $scope.led1Brightness = 50;
+            $scope.led1IsBrightness = function() {
+                socket.emit('led1_brightness',$scope.led1Brightness);
+            } 
         });
 })();

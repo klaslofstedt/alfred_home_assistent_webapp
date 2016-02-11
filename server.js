@@ -4,7 +4,6 @@ var app = require('express')();
 var express = require('express');
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
-var tf = false;
 
 // set pin mode
 gpio.setup(16, gpio.DIR_OUT, write);
@@ -13,7 +12,7 @@ gpio.setup(16, gpio.DIR_OUT, write);
 function write(){
     gpio.write(16, false, function(err){
         if (err) throw err;
-        gpio.write(16, tf);
+        gpio.write(16, false);
         console.log('pin 16 low');
     });
 }
@@ -23,10 +22,13 @@ app.use(express.static('www'));
 // Starts Socket.io server
 io.on('connection', function(socket){
     console.log('a user connected');
-    socket.on('led', function(msg){
-        tf = msg;
-        gpio.write(16, tf);
-        console.log("Led1 = "+ msg + " = "+ tf);
+    socket.on('led1_brightness', function(msg){
+        //gpio.write(16, msg); // make pwm
+        console.log("led1_brightness = "+ msg);
+    });
+    socket.on('led1_status', function(msg){
+        gpio.write(16, msg);
+        console.log("led1_status = "+ msg);
     });
 });
 // Starts HTTP server that shows the app

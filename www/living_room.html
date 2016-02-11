@@ -18,14 +18,14 @@
                 Led1 
             </li>
             <li class="list__item">
-                <pos class="text"> {{showingEven}} </pos>
+                <pos class="text"> {{led1Status}} </pos>
                 <pos class="edit">
                 <ons-button modifier="material--flat" ng-click="alertEdit()">
                 EDIT
                 </pos>
                 </ons-button>
                 <pos class="switch">
-                <ons-switch modifier="material" ng-click="isSelected()"></ons-switch>
+                <ons-switch modifier="material" ng-click="led1IsStatus()"></ons-switch>
                 </pos>
             </li>
             <li class="list__item">
@@ -35,9 +35,9 @@
                 </pos>
             </li>
             <li class="list__item">
-                <pos class="text"> Brightness {{brightness1}}%</pos>
+                <pos class="text"> Brightness {{led1Brightness}}%</pos>
                 <pos class="range">
-                <input ng-model="brightness1" ng-min="{{min}}" ng-max="{{max}}" type="range" class="range range--material" >
+                <input ng-model="led1Brightness" ng-min="{{min}}" ng-max="{{max}}" type="range" class="range range--material" ng-change="led1IsBrightness()">
                 </pos>
             </li>
             <li class="list__header">
