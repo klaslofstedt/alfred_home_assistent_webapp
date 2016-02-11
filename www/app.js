@@ -33,9 +33,14 @@
             $scope.showingEven = 'Off';
             // on press function for ON/OFF button
             $scope.isSelected = function(){
-                socket.emit('led',1);
                 //$scope.showingEven = ! $scope.showingEven;
                 $scope.showingEven = $scope.showingEven === 'On' ? 'Off' : 'On';
+                if($scope.showingEven == 'On'){
+                    socket.emit('led',1);
+                }
+                else{
+                    socket.emit('led',0);
+                }
             }
         });
 })();

@@ -24,7 +24,7 @@ app.use(express.static('www'));
 io.on('connection', function(socket){
     console.log('a user connected');
     socket.on('led', function(msg){
-        tf = !tf;
+        tf = msg;
         gpio.write(16, tf);
         console.log("Led1 = "+ msg + " = "+ tf);
     });

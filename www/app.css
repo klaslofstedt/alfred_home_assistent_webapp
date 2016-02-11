@@ -198,7 +198,7 @@ pos.edit_popup{
     background-image: -webkit-linear-gradient(left,red,orange,yellow,green,blue,indigo,violet);
     background-image: -o-linear-gradient(left,red,orange,yellow,green,blue,indigo,violet);
     background-image: -moz-linear-gradient(left,red,orange,yellow,green,blue,indigo,violet);
-    background-image: linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet,red); 
+    background-image: linear-gradient(to right,red,orange,yellow,green,blue,indigo,violet); 
     background-position: center;
     -webkit-background-size: 100% 2px;
     background-size: 100% 5px;

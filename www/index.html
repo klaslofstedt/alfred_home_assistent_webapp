@@ -9,10 +9,6 @@
         <link href='https://fonts.googleapis.com/css?family=Roboto:400,300italic,300,400italic,500,700,700italic,500italic' rel='stylesheet' type='text/css'>
         <title>Alfred Home Assistent</title>
 
-        <!--
-            <link rel="stylesheet" href="lib/onsenui/css/onsenui.css" type="text/css" media="all" />
-            <link rel="stylesheet" href="lib/onsenui/css/onsen-css-components.css" type="text/css" media="all" />
-        -->
         <link rel="stylesheet" href="lib/onsenui/css/onsenui.css" type="text/css" media="all" />
         <link rel="stylesheet" href="lib/onsenui/css/onsen-css-components-dark-theme.css" type="text/css" media="all" />
         <link rel="stylesheet" href="app.css" type="text/css" media="all" />
@@ -25,19 +21,16 @@
     </head>
 
     <body>
-        <!-- Cordova reference -->
-        <!--<script src="cordova.js"></script>-->
-        <!-- -->
-
-        <ons-splitter>
+        <ons-splitter var="splitter">
+        <!-- MENU BAR -->
         <ons-splitter-side var="menu" side="left" width="60%" collapse swipeable>
         <ons-page modifier="material">
         <ons-list modifier="material">
         <ons-list-header modifier="material">Menu</ons-list-header>
-        <ons-list-item>
+        <ons-list-item ng-click="splitter.loadContentPage('living_room.html'); splitter.closeLeft();">
         Living Room
         </ons-list-item>
-        <ons-list-item>
+        <ons-list-item ng-click="splitter.loadContentPage('bedroom.html'); splitter.closeLeft();">
         Bedroom
         </ons-list-item>
         <ons-list-item>
@@ -49,9 +42,10 @@
         </ons-list>
         </ons-page>
         </ons-splitter-side>
-        <ons-splitter-content page="todo.html"></ons-splitter-content>
+        <!-- END OF MENU BAR -->
+        <ons-splitter-content page="living_room.html"></ons-splitter-content>
         </ons-splitter>
-        <!-- ALERT DIALOG -->
+        <script> /* scipt only here to be able to outcomment this way
         <ons-template id="alert-dialog.html">
         <ons-alert-dialog var="alertDialog">
         <div class="alert-dialog alert-dialog--material">
@@ -81,82 +75,6 @@
         </ons-alert-dialog>
         </ons-template>
         <!-- ALERT DIALOG-->
-
-        <!-- Start of page -->
-        <ons-template id="todo.html">
-        <ons-page modifier="material" ng-controller="TodoController">
-        <!-- Toolbar and menu button -->
-        <ons-toolbar modifier="material">
-        <div class="left">
-            <ons-toolbar-button ng-click="menu.open()" modifier="material">
-            <ons-icon icon="md-menu"></ons-icon>
-            </ons-toolbar-button>
-        </div>
-        <div class="center">Alfred</div>
-        </ons-toolbar>
-        <ons-list-header modifier="material">Living Room</ons-list-header>
-        <!-- End of  Toolbar and menu button -->
-        <!-- Content -->
-
-        <ul class="list">
-            <li class="list__header">
-                Led1 
-            </li>
-            <li class="list__item">
-                <pos class="text"> {{showingEven}} </pos>
-                <pos class="edit">
-                <ons-button modifier="material--flat" ng-click="alertEdit()">
-                EDIT
-                </pos>
-                </ons-button>
-                <pos class="switch">
-                <ons-switch modifier="material" ng-click="isSelected()"></ons-switch>
-                </pos>
-            </li>
-            <li class="list__item">
-                <pos class="text"> Color </pos>
-                <pos class="range">
-                <input type="range" class="range range2--material"> 
-                </pos>
-            </li>
-            <li class="list__item">
-                <pos class="text"> Brightness {{brightness1}}%</pos>
-                <pos class="range">
-                <input ng-model="brightness1" ng-min="{{min}}" ng-max="{{max}}" type="range" class="range range--material" >
-                <!--<input type="range" class="range range--material">--> 
-                </pos>
-            </li>
-            <li class="list__header">
-                Led2 
-            </li>
-            <li class="list__item">
-                <pos class="text"> Switch: </pos>
-                <pos class="edit">
-                <ons-button modifier="material--flat">
-                EDIT
-                </pos>
-                </ons-button>
-                <pos class="switch">
-                <ons-switch  modifier="material"></ons-switch>
-                </pos>
-            </li>
-            <li class="list__item">
-                <pos class="text"> Color: </pos>
-                <pos class="range">
-                <input type="range" class="range range2--material"> 
-                </pos>
-            </li>
-            <li  class="list__item">
-                <pos class="text"> Brightness: </pos>
-                <pos class="range">
-                <input type="range" class="range range--material"> 
-                {{swaggers}}
-                </pos>
-            </li>
-        </ul>
-        <!-- End of content -->
-        </ons-page>
-        </ons-template>
-        <!-- End of page -->
+        */</script>
     </body>
 </html>
