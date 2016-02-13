@@ -195,10 +195,10 @@ pos.edit_popup{
 .range2--material {
     background-image: -webkit-gradient(linear, left top, left bottom, from(#FF0000), to(#0000FF));
     background-image: red; /* For browsers that do not support gradients */
-    background-image: -webkit-linear-gradient(left,red,orange,yellow,green,blue,indigo,violet);
-    background-image: -o-linear-gradient(left,red,orange,yellow,green,blue,indigo,violet);
-    background-image: -moz-linear-gradient(left,red,orange,yellow,green,blue,indigo,violet);
-    background-image: linear-gradient(to right,red,orange,yellow,green,blue,indigo,violet); 
+    background-image: -webkit-linear-gradient(left,#FF0000,#FFFF00,#00FF00,#00FFFF,#0000FF,#FF00FF,#FF0000);
+    background-image: -o-linear-gradient(left,#FF0000,#FFFF00,#00FF00,#00FFFF,#0000FF,#FF00FF,#FF0000);
+    background-image: -moz-linear-gradient(left,#FF0000,#FFFF00,#00FF00,#00FFFF,#0000FF,#FF00FF,#FF0000);
+    background-image: linear-gradient(to right,#FF0000,#FFFF00,#00FF00,#00FFFF,#0000FF,#FF00FF,#FF0000);
     background-position: center;
     -webkit-background-size: 100% 2px;
     background-size: 100% 5px;

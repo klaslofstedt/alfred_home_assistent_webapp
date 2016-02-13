@@ -1,5 +1,5 @@
         <!-- Start of page -->
-        <ons-page modifier="material" ng-controller="TodoController">
+        <ons-page modifier="material" ng-controller="DeviceController">
         <!-- Toolbar and menu button -->
         <ons-toolbar modifier="material">
         <div class="left">
@@ -29,9 +29,9 @@
                 </pos>
             </li>
             <li class="list__item">
-                <pos class="text"> Color </pos>
+                <pos class="text"> Color</pos>
                 <pos class="range">
-                <input type="range" class="range range2--material"> 
+                <input ng-model="led1Color" min="0" max="1530" required ng-min="{{min}}" ng-max="{{max}}" type="range" class="range range2--material" ng-change="led1IsColor()">
                 </pos>
             </li>
             <li class="list__item">
@@ -44,26 +44,26 @@
                 Led2 
             </li>
             <li class="list__item">
-                <pos class="text"> Switch: </pos>
+                <pos class="text"> {{led2Status}} </pos>
                 <pos class="edit">
-                <ons-button modifier="material--flat">
+                <ons-button modifier="material--flat" ng-click="alertEdit()">
                 EDIT
                 </pos>
                 </ons-button>
                 <pos class="switch">
-                <ons-switch  modifier="material"></ons-switch>
+                <ons-switch modifier="material" ng-click="led2IsStatus()"></ons-switch>
                 </pos>
             </li>
             <li class="list__item">
-                <pos class="text"> Color: </pos>
+                <pos class="text"> Color</pos>
                 <pos class="range">
-                <input type="range" class="range range2--material"> 
+                <input ng-model="led2Color" min="0" max="1530" required ng-min="{{min}}" ng-max="{{max}}" type="range" class="range range2--material" ng-change="led2IsColor()">
                 </pos>
             </li>
-            <li  class="list__item">
-                <pos class="text"> Brightness: </pos>
+            <li class="list__item">
+                <pos class="text"> Brightness {{led2Brightness}}%</pos>
                 <pos class="range">
-                <input type="range" class="range range--material"> 
+                <input ng-model="led2Brightness" ng-min="{{min}}" ng-max="{{max}}" type="range" class="range range--material" ng-change="led2IsBrightness()">
                 </pos>
             </li>
         </ul>
