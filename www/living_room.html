@@ -35,6 +35,12 @@
                 </pos>
             </li>
             <li class="list__item">
+                <pos class="text"> Saturation</pos>
+                <pos class="range">
+                <input ng-model="led1Saturation" min="0" max="200" required ng-min="{{min}}" ng-max="{{max}}" type="range" class="range range--material" ng-change="led1IsSaturation()">
+                </pos>
+            </li>
+            <li class="list__item">
                 <pos class="text"> Brightness {{led1Brightness}}%</pos>
                 <pos class="range">
                 <input ng-model="led1Brightness" ng-min="{{min}}" ng-max="{{max}}" type="range" class="range range--material" ng-change="led1IsBrightness()">
