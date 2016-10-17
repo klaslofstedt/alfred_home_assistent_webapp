@@ -1,4 +1,4 @@
-// run with: node server.js
+// run with: sudo node server.js
 //var gpio = require('rpi-gpio');
 var app = require('express')();
 var express = require('express');
@@ -9,7 +9,7 @@ var mqtt = require('mqtt');
 // create a mqtt client
 const client = mqtt.connect();
 // Use the www folder
-app.use(express.static('www'));
+app.use(express.static(__dirname + '/www'));
 
 // Starts Socket.io server
 io.on('connection', function(socket){
