@@ -15,7 +15,33 @@
 
         <ul class="list">
             <li class="list__header">
-                Led1 
+                Wallplug1 
+            </li>
+            <li class="list__item">
+                <pos class="text"> {{mqtt3Status}} </pos>
+                <pos class="edit">
+                <ons-button modifier="material--flat" ng-click="alertEdit()">
+                EDIT
+                </pos>
+                </ons-button>
+                <pos class="switch">
+                <ons-switch modifier="material" ng-click="mqtt3IsStatus()"></ons-switch>
+                </pos>
+            </li>
+
+            <li class="list__header">
+                Wallplug2
+            </li>
+            <li class="list__item">
+                <pos class="text"> {{mqtt4Status}} </pos>
+                <pos class="switch">
+                <ons-switch modifier="material" ng-click="mqtt4IsStatus()"></ons-switch>
+                </pos>
+            </li>
+
+
+            <li class="list__header">
+                RGB Lamp 1 
             </li>
             <li class="list__item">
                 <pos class="text"> {{led1Status}} </pos>
@@ -46,8 +72,21 @@
                 <input ng-model="led1Brightness" ng-min="{{min}}" ng-max="{{max}}" type="range" class="range range--material" ng-change="led1IsBrightness()">
                 </pos>
             </li>
+            <li class="list__item">
+                <pos class="text"> Rainbow </pos>
+                <pos class="switch">
+                <ons-switch modifier="material" ng-click="led1IsRainbow()"></ons-switch>
+                </pos>
+            </li>
+            <li class="list__item">
+                <pos class="text"> Speed</pos>
+                <pos class="range">
+                <input ng-model="led1Speed" min="0" max="100" required ng-min="{{min}}" ng-max="{{max}}" type="range" class="range range--material" ng-change="led1IsSpeed()">
+                </pos>
+            </li>
+
             <li class="list__header">
-                Led2 
+                RGB Lamp 2 
             </li>
             <li class="list__item">
                 <pos class="text"> {{led2Status}} </pos>
@@ -67,11 +106,30 @@
                 </pos>
             </li>
             <li class="list__item">
-                <pos class="text"> Brightness {{led2Brightness}}%</pos>
+                <pos class="text"> Saturation</pos>
+                <pos class="range">
+                <input ng-model="led2Saturation" min="0" max="200" required ng-min="{{min}}" ng-max="{{max}}" type="range" class="range range--material" ng-change="led2IsSaturation()">
+                </pos>
+            </li>
+            <li class="list__item">
+                <pos class="text"> Brightness {{led1Brightness}}%</pos>
                 <pos class="range">
                 <input ng-model="led2Brightness" ng-min="{{min}}" ng-max="{{max}}" type="range" class="range range--material" ng-change="led2IsBrightness()">
                 </pos>
             </li>
+            <li class="list__item">
+                <pos class="text"> Rainbow </pos>
+                <pos class="switch">
+                <ons-switch modifier="material" ng-click="led2IsRainbow()"></ons-switch>
+                </pos>
+            </li>
+            <li class="list__item">
+                <pos class="text"> Speed</pos>
+                <pos class="range">
+                <input ng-model="led2Speed" min="0" max="100" required ng-min="{{min}}" ng-max="{{max}}" type="range" class="range range--material" ng-change="led2IsSpeed()">
+                </pos>
+            </li>
+
         </ul>
         <!-- End of content -->
         </ons-page>
