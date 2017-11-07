@@ -3,15 +3,6 @@
  .controller('DeviceController', function($scope, $timeout) {
 		 var socket = io();
 		 var mqttStatus = 0;
-		 $scope.alertEdit = function(){
-		 ons.createAlertDialog('alert-dialog.html').then(function(alertDialog) {
-				 $scope.title = "Edit";
-				 $scope.button1 = "Move";
-				 $scope.button2 = "dis";
-				 $scope.button3 = "ok";
-				 alertDialog.show();
-				 });
-		 }
 		 // Wallplug 1 (mqtt device 3)
 		 $scope.mqtt3Status = 'Off';
 		 $scope.mqtt3IsStatus = function(){

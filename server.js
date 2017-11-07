@@ -25,7 +25,7 @@ io.on('connection', function(socket){
 				});
 });
 // Starts HTTP server that shows the app
-var port = 8000;
+var port = 8001;
 http.listen(port, function(){
 		console.log('listening on *:'+port);
 		});
